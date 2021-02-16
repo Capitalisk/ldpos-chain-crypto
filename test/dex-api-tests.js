@@ -93,7 +93,7 @@ describe('DEX (ChainCrypto) API tests', async () => {
     });
 
     it('should return false if the signature is valid but does not belong to the correct account', async () => {
-      signaturePacket.signerAddress = '1a85e6041a05d266914cbf3837da81e29b4a7e66b9f9f8804809e914f6018201ldpos';
+      signaturePacket.signerAddress = 'ldposa949caca90cebae80d70c72d6c4e2580f2e51232';
       let isValid = await chainCrypto.verifyTransactionSignature(preparedTxn, signaturePacket);
       assert.equal(isValid, false);
     });
