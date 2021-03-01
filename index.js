@@ -12,7 +12,7 @@ class LDPoSChainCrypto {
     this.chainSymbol = chainSymbol;
     this.chainModuleAlias = chainOptions.moduleAlias;
     this.passphrase = chainOptions.passphrase;
-    this.multisigAddress = chainOptions.walletAddress;
+    this.multisigAddress = chainOptions.multisigAddress;
     this.memberAddress = chainOptions.memberAddress;
     this.keyIndexDirPath = chainOptions.keyIndexDirPath;
     if (this.keyIndexDirPath == null) {
