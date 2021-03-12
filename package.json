@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Leasehold/ldpos-chain-crypto.git"
+    "url": "git+https://github.com/Capitalisk/ldpos-chain-crypto.git"
   },
   "keywords": [
     "lisk",
@@ -23,9 +23,9 @@
   "author": "Jonathan Gros-Dubois",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Leasehold/ldpos-chain-crypto/issues"
+    "url": "https://github.com/Capitalisk/ldpos-chain-crypto/issues"
   },
-  "homepage": "https://github.com/Leasehold/ldpos-chain-crypto#readme",
+  "homepage": "https://github.com/Capitalisk/ldpos-chain-crypto#readme",
   "dependencies": {
     "ldpos-client": "^6.0.0"
   },
