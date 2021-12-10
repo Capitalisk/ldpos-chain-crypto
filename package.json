@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/Capitalisk/ldpos-chain-crypto#readme",
   "dependencies": {
-    "ldpos-client": "^7.0.0"
+    "ldpos-client": "^11.0.3"
   },
   "devDependencies": {
     "mocha": "^8.2.1"

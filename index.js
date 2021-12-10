@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const util = require('util');
 const mkdir = util.promisify(fs.mkdir);
 const { createClient } = require('ldpos-client');
@@ -8,22 +9,19 @@ const {
 } = process.env;
 
 class LDPoSChainCrypto {
-  constructor({ chainSymbol, chainOptions, store }) {
+  constructor({ chainSymbol, chainOptions }) {
     this.chainSymbol = chainSymbol;
     this.chainModuleAlias = chainOptions.moduleAlias;
     this.passphrase = chainOptions.passphrase;
     this.multisigAddress = chainOptions.multisigAddress;
     this.memberAddress = chainOptions.memberAddress;
-    this.keyIndexDirPath = chainOptions.keyIndexDirPath;
+    this.keyIndexDirPath = path.resolve(chainOptions.keyIndexDirPath);
     if (this.keyIndexDirPath == null) {
       throw new Error(
         `A keyIndexDirPath must be specified as part of the ${
           this.chainSymbol
         } chain config`
       );
-    }
-    if (store) {
-      this.store = store;
     }
   }
 
@@ -40,8 +38,7 @@ class LDPoSChainCrypto {
           return channel.invoke(`${this.chainModuleAlias}:getAccount`, { walletAddress });
         }
       },
-      store: this.store,
-      storeDirPath: this.keyIndexDirPath
+      keyIndexDirPath: this.keyIndexDirPath
     });
     await this.ldposClient.connect({
       passphrase: this.passphrase,
