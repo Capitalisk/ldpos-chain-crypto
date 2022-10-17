@@ -16,7 +16,7 @@ class LDPoSChainCrypto {
     this.multisigAddress = chainOptions.multisigAddress;
     this.memberAddress = chainOptions.memberAddress;
     this.keyIndexDirPath = path.resolve(chainOptions.keyIndexDirPath);
-    if (this.keyIndexDirPath == null) {
+    if (chainOptions.keyIndexDirPath == null) {
       throw new Error(
         `A keyIndexDirPath must be specified as part of the ${
           this.chainSymbol
