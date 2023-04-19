@@ -15,7 +15,6 @@ class LDPoSChainCrypto {
     this.passphrase = chainOptions.passphrase;
     this.multisigAddress = chainOptions.multisigAddress;
     this.memberAddress = chainOptions.memberAddress;
-    this.keyIndexDirPath = path.resolve(chainOptions.keyIndexDirPath);
     if (chainOptions.keyIndexDirPath == null) {
       throw new Error(
         `A keyIndexDirPath must be specified as part of the ${
@@ -23,6 +22,7 @@ class LDPoSChainCrypto {
         } chain config`
       );
     }
+    this.keyIndexDirPath = path.resolve(chainOptions.keyIndexDirPath);
   }
 
   async load(channel) {
